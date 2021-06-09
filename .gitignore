@@ -132,3 +132,4 @@ dmypy.json
 # Local scripts
 build.sh
 run.sh
+*.csv
