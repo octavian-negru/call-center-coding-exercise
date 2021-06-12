@@ -1,4 +1,3 @@
-from call_center.src.actors.actors_creator import BUY
 from call_center.src.actors.consumer import Consumer
 from call_center.src.common.person import (
     AGE,
@@ -9,6 +8,7 @@ from call_center.src.common.person import (
     INCOME,
     PHONE_NUMBER,
     AVAILABLE,
+    BUY,
 )
 
 
@@ -26,6 +26,6 @@ def test_consumer_do_not_raise():
         }
     )
 
-    consumer.call()
-    consumer.accepts_call()
+    consumer.call(None)
+    consumer.accepts_call_from(None)
     consumer.respond(consumer)

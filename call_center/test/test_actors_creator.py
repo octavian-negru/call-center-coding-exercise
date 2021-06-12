@@ -13,3 +13,14 @@ def test_actors_creator_creates_expected_number_of_actors():
 
 def test_actors_creator_is_singleton():
     assert id(ActorsCreator()) == id(ActorsCreator())
+
+
+def test_actors_creator_creates_active_agents():
+    for agent in ActorsCreator().agents:
+        assert agent.available is True
+
+
+def test_actors_creator_stops_all_agents():
+    ActorsCreator().stop_all_agents()
+    for agent in ActorsCreator().agents:
+        assert agent.active is False

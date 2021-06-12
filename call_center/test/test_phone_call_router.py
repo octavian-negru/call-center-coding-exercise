@@ -1,17 +1,12 @@
 import pytest
 
-from call_center.src.actors.actors_creator import RENT, BUY
 from call_center.src.actors.agent import InsuranceAgent
 from call_center.src.actors.consumer import Consumer
 from call_center.src.common.person import (
     AVAILABLE,
     INSURANCE_OPERATION,
-    AGE,
-    STATE,
-    KIDS_COUNT,
-    CARS_COUNT,
-    INCOME,
-    PHONE_NUMBER,
+    RENT,
+    BUY,
 )
 from call_center.src.routers.phone_call_router import PhoneCallRouter
 
