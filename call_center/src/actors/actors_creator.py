@@ -1,5 +1,3 @@
-import csv
-import os
 import random
 
 from typing import List
@@ -8,7 +6,6 @@ from faker import Faker
 
 from call_center.src.actors.agent import InsuranceAgent
 from call_center.src.actors.consumer import Consumer
-from call_center.src.common.call_journal import CALL_CENTER_STATS_PATH
 from call_center.src.common.person import (
     AGE,
     AVAILABLE,
@@ -20,7 +17,6 @@ from call_center.src.common.person import (
     STATE,
     RENT,
     BUY,
-    Person,
 )
 from call_center.src.common.singleton_meta import SingletonMeta
 

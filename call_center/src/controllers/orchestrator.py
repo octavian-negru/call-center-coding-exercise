@@ -8,7 +8,7 @@ from call_center.src.common.call_journal import CallJournal
 from call_center.src.common.decorators import log_crash
 
 
-CALL_CENTER_TIMEOUT = 15  # seconds for agents to handle all consumers
+CALL_CENTER_TIMEOUT = 20  # seconds for agents to handle all consumers
 
 
 class CallCenterOrchestrator:

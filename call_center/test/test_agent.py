@@ -111,7 +111,6 @@ DUMMY_PERSONAL_INFO = {
             ],
             False,
         ),
-        # TODO: add support for non numerical comparisons
     ],
 )
 def test_agent_accepts_call(call_acceptance_criteria, expected):

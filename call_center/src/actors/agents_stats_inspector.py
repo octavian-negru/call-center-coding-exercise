@@ -9,15 +9,15 @@ from call_center.src.common.person import Person
 
 class AgentsStatsInspector:
     @staticmethod
-    def inspect_agents_load():
+    def inspect_agents_load(agents=ActorsCreator().agents):
         """
         Utility method to check how many Agents have work assigned.
         Returns the stats at the moment of calling.
+        :param agents: agents to inspect
         :return: string, e.g. Available agents: 10/20
         """
-        all_agents = ActorsCreator().agents
-        available_agents = [agent for agent in all_agents if agent.available]
-        return f"Available agents: {len(available_agents)}/{len(all_agents)}"
+        available_agents = [agent for agent in agents if agent.available]
+        return f"Available agents: {len(available_agents)}/{len(agents)}"
 
     @staticmethod
     def display_tree_structure(path_to_display):
@@ -49,7 +49,7 @@ class AgentsStatsInspector:
     @staticmethod
     def _dump_actors(actors: List[Person]):
         """
-        Utility method to dump specific actors informations.
+        Utility method to dump specific actors information.
         The method dumps a CSV file named as the first actor type.
         E.g. for an object of type Consumer, the file name is Consumer.csv
         The CSV lines contain the data returned by get_personal_data() method,
