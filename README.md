@@ -17,9 +17,17 @@ There are 1000 Consumers and 20 InsuranceAgents.
     - Each agent should be assigned to handle certain type of consumers that meet a range or value of the attributes
     - Voice mail inbox per agent exists. If a consumer calls and there are no agents available to answer because they are all busy, then calls are saved to the voicemail inbox for the best matched agent so that the agent can call back with the consumer’s saved phone number.
 
+- ActorsCreator:
+    - Singleton class which acts as a container for both Agents and Consumers.
+    - In a real world scenario we'll have a database with Agents/Consumers and extract actors from that DB
+
+- CallCenterOrchestrator:
+    - The object which *moves* the world.
+    - For all consumers in ActorsCreator, call consumer.call() in a separate thread.
+    - As a consequence, the Agents will be overloaded with calls.
   
 ## How to build/run the project
  - build: `./build.sh`
- - run: `./run.sh`
+ - run: `./run.sh` After a run, observe `call_center/stats/last_run_stats.log` file. Also, `call_center/stats/InsuranceAgent.csv` contains informations about the agents' activity.
 - see coverage percent: `pytest --cov`
 

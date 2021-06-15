@@ -23,7 +23,7 @@ class InsuranceAgent(Person):
         self.active = True
 
         # Thread for periodically reading voice mail messages
-        self.polling_thread = Thread(target=self._poll_voice_mail)
+        self.polling_thread: Thread = Thread(target=self._poll_voice_mail)
 
         # Start looking for voice mail messages
         self._start_polling_voice_mail()

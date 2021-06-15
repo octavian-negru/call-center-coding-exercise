@@ -59,6 +59,7 @@ class AgentsStatsInspector:
         """
         if actors:
             actor_class_name = type(actors[0]).__name__
+            print(f"Dumping {actor_class_name}s")
             actors_file_name = f"{actor_class_name}.csv"
             actors_file_path = os.path.join(CALL_CENTER_STATS_PATH, actors_file_name)
             os.makedirs(os.path.dirname(actors_file_path), exist_ok=True)
